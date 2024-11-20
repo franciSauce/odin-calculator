@@ -20,9 +20,38 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-    gap: 15px;
+    gap: 10px;
     padding: 20px;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.calculator button {
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, .75);
+    border: 1px solid white;
+    border-radius: 50px;
+    outline: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.calculator button:hover {
+    background-color: rgba(72, 205, 223, 0.9);
+    transform: scale(1.02);
+}
+
+.calculator button:active {
+    transform: scale(0.98);
+}
+
+.calculator .symbol {
+    background-color: rgb(255, 251, 0);
+    font-weight: bold;
+}
+
+.calculator .action-2 {
+    grid-column: span 2;
+    background-color: rgb(0, 247, 255);
 }
