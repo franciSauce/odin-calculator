@@ -174,14 +174,14 @@ document.addEventListener("keydown", (e) => {
 
     // Handle numbers (0 - 9)
     if (!isNaN(key) && key !== "") {
-        const btn = Array.from(buttons).find(button => button.textContent === key);
+        const btn = Array.from(button).find(button => button.textContent === key);
         if (button) clicks(button);
         return;
     }
 
     // Handle special keys
     if (key in keyMap) {
-        const btn = Array.from(buttons).find(button => button.textContent === keyMap[key]);
+        const btn = Array.from(button).find(button => button.textContent === keyMap[key]);
         if (button) clicks(button);
         e.preventDefault(); // Prevent default behavior for special keys
     }
