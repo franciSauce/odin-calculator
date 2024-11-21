@@ -151,9 +151,9 @@ function handleClick(button) {
 }
 
 // Click event listeners for the buttons
-const btns = document.querySelectorAll("button");
-btns.forEach((button) => {
-    button.addEventListener("click", () => clicks(button));
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => handleClick(button));
 });
 
 // Key mapping object for specific keys
