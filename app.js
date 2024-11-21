@@ -155,20 +155,19 @@ btns.forEach((btn) => {
     btn.addEventListener("click", () => clicks(button));
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Key mapping object for specific keys
+const keyMap = {
+    "Escape": "AC",
+    "Enter": "=",
+    "Backspace": "DEL",
+    "Delete": "DEL",
+    "/": "÷",
+    "*": "*",
+    "-": "-",
+    "+": "+",
+    ".": "."
+};
+
 
 // Add keydown event listener with key
 
