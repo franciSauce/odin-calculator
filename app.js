@@ -1,7 +1,7 @@
 // Calculator object
 const calculator = {
-    prevOpTextElement: document.querySelector("[data-prev-op}"),
-    currOpTextElement: document.querySelector("[data-curr-op]"),
+    prevOp: document.querySelector("[data-prev-op]"),
+    currOp: document.querySelector("[data-curr-op]"),
     currOp: "",
     prevOp: "",
     operation: undefined,
@@ -40,13 +40,13 @@ const calculator = {
     },
 
     // Function to display error message
-    displayErrorMsg(msg) {
-        const errorMsgElement = document.createElement("div");
-        errorMsgElement.classList.add("error-msg");
-        errorMsgElement.textContent = msg;
+    displayErrorMsg(message) {
+        const errorMsg = document.createElement("div");
+        errorMsg.className = "error-msg";
+        errorMsg.textContent = message;
 
         const displayContainer = document.querySelector(".display");
-        displayContainer.appendChild(errorMsgElement);
+        displayContainer.appendChild(errorMsg);
 
         setTimeout(()=> {
             errorMsgElement.remove();
