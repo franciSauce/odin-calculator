@@ -39,8 +39,23 @@ const calculator = {
         this.currOp = "";
     },
 
+    // Function to display error message
+    displayErrorMsg(msg) {
+        const errorMsgElement = document.createElement("div");
+        errorMsgElement.classList.add("error-msg");
+        errorMsgElement.textContent = msg;
+
+        const displayContainer = document.querySelector(".display");
+        displayContainer.appendChild(errorMsgElement);
+
+        setTimeout(()=> {
+            errorMsgElement.remove();
+        }, 2500);
+    },
+
+    
 }
-// Function to display error message
+
 
 // Compute the result of the operation
 
