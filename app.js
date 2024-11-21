@@ -124,7 +124,7 @@ const calculator = {
 };
 
 // Function to handle button clicks
-function clicks(button) {
+function handleClick(button) {
     const btnValue = button.textContent;
 
     switch (btnValue) {
