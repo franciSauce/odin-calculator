@@ -151,8 +151,8 @@ function clicks(button) {
 
 // Click event listeners for the buttons
 const btns = document.querySelectorAll("button");
-btns.forEach((btn) => {
-    btn.addEventListener("click", () => clicks(button));
+btns.forEach((button) => {
+    button.addEventListener("click", () => clicks(button));
 });
 
 // Key mapping object for specific keys
@@ -168,11 +168,26 @@ const keyMap = {
     ".": "."
 };
 
-
 // Add keydown event listener with key
+document.addEventListener("keydown", (e) => {
+    const key = e.key;
 
-// Handle numbers (0 - 9)
+    // Handle numbers (0 - 9)
+    if (!isNaN(key) && key !== "") {
+        const btn = Array.from(buttons).find(button => button.textContent === key);
+        if (button) clicks(button);
+        return;
+    }
 
-// Handle special keys
+    // Handle special keys
+    if (key in keyMap) {
+        const btn = Array.from(buttons).find(button => button.textContent === keyMap[key]);
+        if (button) clicks(button);
+        e.preventDefault(); // Prevent default behavior for special keys
+    }
+});
 
-// Prevent default behavior for special keys
+
+
+
+
