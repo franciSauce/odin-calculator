@@ -149,6 +149,11 @@ function clicks(button) {
     calculator.updateOutput();
 }
 
+// Click event listeners for the buttons
+const btns = document.querySelectorAll("button");
+btns.forEach((btn) => {
+    btn.addEventListener("click", () => clicks(button));
+});
 
 
 
@@ -159,7 +164,9 @@ function clicks(button) {
 
 
 
-// Add click event listeners to the buttons
+
+
+
 
 // Key mapping object for specific keys
 
