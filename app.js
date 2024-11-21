@@ -122,16 +122,42 @@ const calculator = {
     }
 };
 
-
-
-
-
-
-
-
-
-
 // Function to handle button clicks
+function clicks(button) {
+    const btnValue = button.textContent;
+
+    switch (btnValue) {
+        case "DEL":
+            calculator.delete();
+            break;
+        case "AC":
+            calculator.clear();
+            break;
+        case "=":
+            calculator.compute();
+            break;
+        case "+":
+        case "-":
+        case "*":
+        case "÷":
+            calculator.chooseOperation(btnValue);
+            break;
+        default:
+            calculator.appendNumber(btnValue);
+    }
+
+    calculator.updateOutput();
+}
+
+
+
+
+
+
+
+
+
+
 
 // Add click event listeners to the buttons
 
