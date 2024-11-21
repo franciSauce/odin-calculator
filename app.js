@@ -24,17 +24,22 @@ const calculator = {
         this.currOp = this.currOp.toString() + number.toString();
     },
 
+    // Choose an operation & calculate
+    chooseOperation(operator) {
+        if (this.currOp === "") return;
+        if (this.prevOp !== "") {
+            this.compute();
+        }
+        if (operator === "+" && parseFloat(this.currOp) === 0) {
+            this.displayErrorMsg("Nice try! You can't divide by zero.");
+            return;
+        }
+        this.operation = operator;
+        this.prevOp = this.currOp;
+        this.currOp = "";
+    },
+
 }
-
-
-
-
-
-
-
-
-// Choose an operation & calculate
-
 // Function to display error message
 
 // Compute the result of the operation
