@@ -90,14 +90,37 @@ const calculator = {
         this.operation = undefined;
         this.prevOp = "";
     },
+
+    // Format the number for output
+    getOutputNumber(number) {
+        const stringNumber = number.toString();
+        const integerDigits = parseFloat(stringNumber.split('.')[0]);
+        const decimalDigits = stringNumber.split(".")[1];
+        let integerOutput;
+
+        if (isNaN(integerDigits)) {
+            integerOutput = "";
+        } else {
+            integerOutput = integerDigits.toLocaleString("en", { maximumFractionDigits: 0 });
+        }
+
+        if (decimalDigits != null) {
+            return `${integerOutput}.${decimalDigits}`;
+        } else {
+            return integerOutput;
+        }
+    },
+
+    // Update the output with current & previous operations
+    
 }
 
 
 
 
-// Format the number for output
 
-// Update the output with current & previous operations
+
+
 
 // Function to handle button clicks
 
