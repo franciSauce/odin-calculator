@@ -114,9 +114,9 @@ const calculator = {
 
     // Update the output with current & previous operations
     updateOutput() {
-        this.currOp.textContent = this.getOutputNumber(this.currOp);
+        this.currOpTextElement.textContent = this.getOutputNumber(this.currOp);
         if (this.operation != null) {
-            this.prevOp.textContent = `${this.getOutputNumber(this.prevOp)} ${this.operation}`;
+            this.prevOpTextElement.textContent = `${this.getOutputNumber(this.prevOp)} ${this.operation}`;
         } else {
             this.prevOp.textContent = "";
         }
