@@ -49,7 +49,7 @@ const calculator = {
         displayContainer.appendChild(errorMsg);
 
         setTimeout(() => {
-            errorMsgElement.remove();
+            errorMsg.remove();
         }, 2500);
     },
 
