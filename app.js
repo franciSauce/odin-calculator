@@ -84,6 +84,7 @@ const calculator = {
 
         if (!isFinite(result)) {
             this.displayErrorMsg("Infinity! You're trying to break the universe.");
+            return;
         }
 
         this.currOp = result;
