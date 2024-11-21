@@ -53,11 +53,47 @@ const calculator = {
         }, 2500);
     },
 
-    
+    // Compute the result of the operation
+    compute() {
+        let result;
+        const prev = parseFloat(this.prevOp);
+        const curr = parseFloat(this.currOp);   
+
+        if (isNaN(prev) || isNaN(curr)) return;
+
+        switch (this.operation) {
+            case "+":
+                result = prev + curr;
+                break;
+            case "-":
+                result = prev - curr;
+                break;
+            case "*":
+                result = prev * curr;
+                break;
+            case "÷":
+                if (curr === 0) {
+                    this.displayErrorMsg("You broke math! Dividing by zero leads to infinity.");
+                    return;
+                }
+                result = prev / curr;
+                break;
+            default:
+                return;
+        }
+
+        if (!isFinite(result)) {
+            this.displayErrorMsg("Infinity! You're trying to break the universe.");
+        }
+
+        this.currOp = result;
+        this.operation = undefined;
+        this.prevOp = "";
+    },
 }
 
 
-// Compute the result of the operation
+
 
 // Format the number for output
 
