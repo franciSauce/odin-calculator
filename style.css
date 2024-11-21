@@ -83,7 +83,12 @@ body {
     min-height: 2.5rem;
 }
 
-.error-msg {
+.display .curr-op.error {
+    color: red;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+/* .error-msg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -96,4 +101,4 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-in;
-}
+} */
