@@ -1,10 +1,37 @@
 // Calculator object
+const calculator = {
+    prevOpTextElement: document.querySelector("[data-prev-op}"),
+    currOpTextElement: document.querySelector("[data-curr-op]"),
+    currOp: "",
+    prevOp: "",
+    operation: undefined,
 
-// Clear calculator values
+    // Clear calculator values
+    clear() {
+        this.prevOp = "";
+        this.currOp = "";
+        this.operation = undefined;
+    },
 
-// Delete the last character from the curr-op
+    // Delete the last character from the curr-op
+    delete() {
+        this.currOp = this.currOp.toString().slice(0, -1);
+    },
 
-// Append a number to the curr-op
+    // Append a number to the curr-op
+    appendNumber(number) {
+        if (number === "." && this.currOp.includes(".")) return;
+        this.currOp = this.currOp.toString() + number.toString();
+    },
+
+}
+
+
+
+
+
+
+
 
 // Choose an operation & calculate
 
