@@ -48,7 +48,7 @@ const calculator = {
         const displayContainer = document.querySelector(".display");
         displayContainer.appendChild(errorMsg);
 
-        setTimeout(()=> {
+        setTimeout(() => {
             errorMsgElement.remove();
         }, 2500);
     },
