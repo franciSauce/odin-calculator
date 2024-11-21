@@ -1,7 +1,7 @@
 // Calculator object
 const calculator = {
-    prevOp: document.querySelector("[data-prev-op]"),
-    currOp: document.querySelector("[data-curr-op]"),
+    prevOpTextElement: document.querySelector("[data-prev-op]"),
+    currOpTextElement: document.querySelector("[data-curr-op]"),
     currOp: "",
     prevOp: "",
     operation: undefined,
