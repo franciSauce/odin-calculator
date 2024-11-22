@@ -32,7 +32,8 @@ const calculator = {
             this.currOp = "";
         }
 
-        if (number === "." && this.currOp.includes(".")) return;
+        if (number === "." && this.currOp.includes("."))
+             return;
         this.currOp = this.currOp.toString() + number.toString();
     },
 
@@ -40,14 +41,12 @@ const calculator = {
     chooseOperation(operator) {
         // Clear any previous error
         this.error = null;
-        if (this.currOp === "") return;
+        if (this.currOp === "")
+             return;
         if (this.prevOp !== "") {
             this.compute();
         }
-        // if (operator === "+" && parseFloat(this.currOp) === 0) {
-        //     this.displayErrorMsg("Nice try! You can't divide by zero.");
-        //     return;
-        // }
+        
         this.operation = operator;
         this.prevOp = this.currOp;
         this.currOp = "";
@@ -57,16 +56,6 @@ const calculator = {
     displayErrorMsg(message) {
         this.error = message;
         this.currOp = "";
-        // const errorMsg = document.createElement("div");
-        // errorMsg.className = "error-msg";
-        // errorMsg.textContent = message;
-
-        // const displayContainer = document.querySelector(".display");
-        // displayContainer.appendChild(errorMsg);
-
-        // setTimeout(() => {
-        //     errorMsg.remove();
-        // }, 2500);
     },
 
     // Compute the result of the operation
@@ -78,7 +67,8 @@ const calculator = {
         const prev = parseFloat(this.prevOp);
         const curr = parseFloat(this.currOp);   
 
-        if (isNaN(prev) || isNaN(curr)) return;
+        if (isNaN(prev) || isNaN(curr)) 
+            return;
 
         switch (this.operation) {
             case "+":
@@ -102,7 +92,7 @@ const calculator = {
         }
 
         if (!isFinite(result)) {
-            this.displayErrorMsg("INFINITY!.");
+            this.displayErrorMsg("INFINITY!");
             return;
         }
 
@@ -216,8 +206,3 @@ document.addEventListener("keydown", (e) => {
         e.preventDefault(); // Prevent default behavior for special keys
     }
 });
-
-
-
-
-
