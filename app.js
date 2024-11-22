@@ -147,7 +147,7 @@ const calculator = {
         if (this.operation != null) {
             this.prevOpTextElement.textContent = `${this.getOutputNumber(this.prevOp)} ${this.operation}`;
         } else {
-            this.prevOp.textContent = "";
+            this.prevOpTextElement.textContent = "";
         }
     }
 };
